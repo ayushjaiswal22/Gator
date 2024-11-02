@@ -14,3 +14,15 @@
 #### For example:
 `{"db_url":"postgres://<username>@localhost:5432/<dbname>?sslmode=disable"}`
 
+#### Migrate the DB
+```
+cd $GOPATH/pkg/mod/github.com/user/repo@version/sql/schema/
+goose postgres <db_url> up
+```
+
+##### In case migration fails:
+```
+goose postgres <db_url> down
+goose postgres <db_url> up
+```
+
